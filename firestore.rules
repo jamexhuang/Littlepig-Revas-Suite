@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Safe default for this public release: deny everything.
+//
+// The app syncs scenarios to the `modules` collection in Firestore and has
+// no user authentication, so any rule that allows public read/write lets
+// anyone on the internet read or overwrite your synced data. Only loosen
+// this if you understand that trade-off, or after you add Firebase Auth
+// and scope the rules to signed-in users.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

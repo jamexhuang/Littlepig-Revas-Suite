@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Revas Order Automation Tool",
+    "version": "1.1.4",
+    "description": "Automates order processing for Revas game.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
